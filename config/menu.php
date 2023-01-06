@@ -23,6 +23,15 @@ return [
             ]
         ],
         'setting'=> ['label'=>'系统设置', 'items'=>[
+                ['label' => '权限管理',
+                    'items' => [
+                        ['label' => '用户管理', 'url' => ['/admin/user']],
+                        ['label' => '角色管理', 'url' => ['/admin/roles']],
+                        ['label' => '权限列表', 'url' => ['/admin/permission']],
+                        ['label' => '路由列表', 'url' => ['/admin/route']],
+                        ['label' => '规则列表', 'url' => ['/admin/rule']]
+                    ]
+                ],
                 ['label' => '个人中心',
                     'items' => [
                         ['label' => '修改密码', 'url' => ['/admin/personal/reset-password']],
