@@ -22,7 +22,7 @@ return [
                 ]
             ]
         ],
-        'setting'=> ['label'=>'系统设置', 'items'=>[
+        'setting'=> ['items'=>[
                 ['label' => '个人中心',
                     'items' => [
                         ['label' => '修改密码', 'url' => ['/admin/personal/reset-password']],

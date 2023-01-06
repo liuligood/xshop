@@ -27,29 +27,22 @@ AppAsset::register($this);
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo"><?= Html::img('/img/logo.png',['style'=>'width:200px'])?></div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
-            <?php foreach ($this->context->topMenu as $item):?>
-                <li class="layui-nav-item <?= $item['active'] ? 'layui-this' : '' ?>"><?= Html::a($item['label'],$item['url'],[
-                        'data' => [
-                            'method' => 'post'
-                        ]
-                    ])?></li>
-            <?php endforeach;?>
+        <li class="layui-nav-item layui-this" style=""><a href="/student/web/demo" data-method="post">主页</a></li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="javascript:;">
-                    <?= Html::img('/img/icon.png',['class'=>"layui-nav-img"])?>
+                    <?= Html::img('/student/web/static/img/xieyujia.jpg',['class'=>"layui-nav-img"])?>
                     <?= Yii::$app->user->identity->username?>
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><?= Html::a('修改密码','admin/personal/reset-password')?></dd>
+                    <dd><a  href="/student/web/shopping-cart/index">我的后台</dd>
                 </dl>
             </li>
             <li class="layui-nav-item">
-                <?= Html::a('注销','site/logout',[
+                <?= Html::a('注销','/student/web/site/logout',  [
                     'data' => [
                         'method' => 'post'
                     ]
@@ -104,7 +97,7 @@ AppAsset::register($this);
      </div>
     <div class="layui-footer">
         <!-- 底部固定区域 -->
-        &copy; My Company <?= date('Y') ?> - <?= Yii::powered() ?>
+        &copy; xshop  第一个试手项目
     </div>
 </div>
 <?php $this->endBody() ?>
