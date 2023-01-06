@@ -45,11 +45,11 @@ AppAsset::register($this);
                     <?= Yii::$app->user->identity->username?>
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><?= Html::a('修改密码','/admin/personal/reset-password')?></dd>
+                    <dd><?= Html::a('修改密码','admin/personal/reset-password')?></dd>
                 </dl>
             </li>
             <li class="layui-nav-item">
-                <?= Html::a('注销','/site/logout',[
+                <?= Html::a('注销','site/logout',[
                     'data' => [
                         'method' => 'post'
                     ]

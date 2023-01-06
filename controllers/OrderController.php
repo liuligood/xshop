@@ -61,7 +61,6 @@ class OrderController extends BaseController
             $info['goods'] = $info['goods'] + $post['goods'];
             $info['now_goods'] = $info['now_goods'] + $post['goods'];
             $info['status'] = $post['status'];
-            $info['goods_status'] = $post['goods_status'];
             $info['order_img'] = $post['goods_img'];
             $info['update_time'] = time();
             if ($info->save()){
