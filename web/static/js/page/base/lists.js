@@ -227,8 +227,10 @@ layui.config({
             var url = $(this).data('url');
             if (layEvent === 'update') { //编辑
                 var title = $(this).data('title');
-                var callback_title = $(this).data('callback_title');
-                open_url(url, title, callback_title);
+                var width = $(this).data('width');
+                var height = $(this).data('height');
+
+                open(url, title, width, height);
             } else if (layEvent === 'delete') { //删除
                 layer.confirm('确定删除此该数据？', {icon: 3, title: '提示信息'}, function (index) {
                     get_url(url);

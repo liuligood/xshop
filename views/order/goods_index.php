@@ -47,9 +47,9 @@ use app\models\Order;
             <a class="layui-btn layui-btn-sm layui-btn-danger js-batchs" data-title="下架" data-url="<?=Url::to(['order/bath?status=2'])?>" >批量下架</a>
         </div>
     </div>
-    </div>
+</div>
     <div class="layui-card-body">
-<table id="order" class="layui-table" lay-data="{url:'<?=Url::to(['order/list'])?>', height : 'full-20', cellMinWidth : 95, page:{limits:[20, 50, 100, 500, 1000]}}" lay-filter="order">
+<table id="goods-index" class="layui-table" lay-data="{url:'<?=Url::to(['order/list'])?>', height : 'full-20', cellMinWidth : 95, page:{limits:[20, 50, 100, 500, 1000]}}" lay-filter="goods-index">
     <thead>
     <tr>
         <th lay-data="{type: 'checkbox', width:50,field: 'id'}"></th>
@@ -76,7 +76,7 @@ use app\models\Order;
     {{# }else{ }}
     <a class="layui-btn layui-btn-danger layui-btn-xs" data-title="下架" lay-event="operating" data-url="<?=Url::to(['order/update-status'])?>?id={{ d.id }}&status=2">下架</a>
     {{# } }}
-    <a class="layui-btn layui-btn-normal layui-btn-xs" data-type="open" data-height="495px"  data-width="1100px" lay-event="update" data-url="<?=Url::to(['order/update'])?>?id={{ d.id }}" data-title="编辑" data-callback_title="编辑货物">编辑</a>
+    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="update" data-height="790px"  data-width="1400px"  data-url="<?=Url::to(['order/update'])?>?id={{ d.id }}" data-title="编辑" data-callback_title="编辑货物">编辑</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete" data-url="<?=Url::to(['order/delete'])?>?id={{ d.id }}">删除</a>
 </script>
 <script type="text/html" id="goodsImgTpl">
@@ -86,10 +86,10 @@ use app\models\Order;
 </script>
 
 <script>
-    const tableName="order";
+    const tableName="goods-index";
 </script>
+<?=$this->registerJsFile("@web/static/js/page/base/lists.js?".time());?>
 <?php
-$this->registerJsFile("@web/static/js/page/base/lists.js");
 $this->registerCssFile("@web/static/plugins/lightbox2/css/lightbox.min.css", ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile("@web/static/plugins/lightbox2/js/lightbox.min.js", ['depends' => 'yii\web\JqueryAsset']);
 ?>

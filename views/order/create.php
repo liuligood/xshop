@@ -26,7 +26,7 @@ use app\models\Order;
 		<div class="layui-form-item">
             <label class="layui-form-label">商品标题</label>
             <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="required" placeholder="请输入标题"  class="layui-input">
+                <textarea type="text" name="title" lay-verify="required" placeholder="请输入标题"  class="layui-textarea"></textarea>
             </div>
         </div>
         

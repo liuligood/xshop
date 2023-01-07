@@ -80,7 +80,7 @@ class OrderController extends BaseController
             $info = new Order();
             $info['title'] = $post['title'];
             $info['price'] = $post['price'];
-            $info['status'] = $post['status'];
+            // $info['status'] = $post['status'];
             $info['goods'] = $post['goods'];
             $info['goods_status'] = $post['goods_status'];
             $info['order_img'] = $post['goods_img'];
