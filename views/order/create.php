@@ -64,7 +64,7 @@ use app\models\Order;
                     <button type="button" class="layui-btn layui-btn-normal" id="js_add_img_url">添加</button>
                 </div>
                 <div class="layui-upload ys-upload-img-multiple" data-number="10">
-                    <button type="button" class="layui-btn">上传图片</button>
+                    <button type="button" class="layui-btn" lay-data="{url: '/student/web/app/upload-img'}">上传图片</button>
                     <input type="hidden" name="goods_img" class="layui-input" value="<?=empty($model['order_img'])?'[]':htmlentities($model['order_img'], ENT_COMPAT);?>">
                     <ol class="layui-upload-con">
                     </ol>
@@ -106,7 +106,7 @@ use app\models\Order;
                 </div>
             </div>
             <div class="layui-upload ys-upload-img" >
-                <button type="button" class="layui-btn layui-btn-xs" style="float: left">上传图片</button>
+                <button type="button" class="layui-btn layui-btn-xs" style="float: left" >上传图片</button>
                 <div class="layui-upload-list" style="float: left;margin: 0 10px">
                     <img class="layui-upload-img" style="max-width: 100px" src="{{ d.property.goods_img || '' }}">
                 </div>
@@ -152,6 +152,7 @@ use app\models\Order;
     </li>
 </script>
 <?=$this->registerJsFile("@web/static/js/page/base/form.js?");?>
+<?=$this->registerJsFile("@web/static/js/page/base/lists.js?");?>
 <?=$this->registerJsFile("@web/static/js/page/shops/form.js?");?>
 <?php
 $this->registerCssFile("@web/static/plugins/lightbox2/css/lightbox.min.css", ['depends' => 'yii\web\JqueryAsset']);

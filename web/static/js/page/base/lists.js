@@ -114,6 +114,7 @@ layui.config({
     var upload = layui.upload;
     upload.render({
         elem: '.ys-upload'
+        ,url: '/student/web/app/upload-img'
         ,before: function(){
             //layer.tips('接口地址：'+ this.url, this.item, {tips: 1});
         }
