@@ -26,11 +26,6 @@ $config = [
         ],
         'db' => $db,
     ],
-    'Aliyunoss' => [
-
-        'class' => 'app\components\Aliyunoss',
-      
-      ],
     'params' => $params,
     /*
     'controllerMap' => [

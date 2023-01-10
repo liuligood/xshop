@@ -48,13 +48,15 @@ class AppController extends BaseController
         if (!in_array(strtolower($image->extension), array('gif', 'jpg', 'jpeg', 'png'))) {
             return $this->FormatArray(self::REQUEST_FAIL, "请上传标准图片文件, 支持gif,jpg,png和jpeg.");
         }
-        $result = \Yii::$app->Aliyunoss->upload_file($image);
-        if(!$result){
-            return $this->FormatArray(self::REQUEST_FAIL, '上传失败');
+
+        $imgname = $image->name;
+        $tmp = $image->tempName;
+        if(!move_uploaded_file($tmp,"F:/wamp64/www/images/img/".$imgname)){
+            return $this->FormatArray(self::REQUEST_FAIL, "上传失败");
         }
 
         $data = [];
-        $data['img'] = $result;
+        $data['img'] = "/images/img/".$imgname;
         return $this->FormatArray(self::REQUEST_SUCCESS, "上传成功", $data);
     }
 

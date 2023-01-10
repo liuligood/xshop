@@ -1,6 +1,6 @@
 <?php
 
-namespace app\common\components;
+namespace app\components;
 
 use OSS\Core\OssException;
 use OSS\OssClient;
